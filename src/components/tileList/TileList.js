@@ -7,7 +7,7 @@ export const TileList = ({tiles}) => {
     <div>
       {tiles.map((tile, index) => {
         const {name, ...description} = tile;
-        <Tile key={index} name={name} description={description}/>})
+        return <Tile key={index} name={name} description={description}/>})
       }
     </div>
   );

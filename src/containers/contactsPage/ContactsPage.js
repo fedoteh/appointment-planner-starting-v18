@@ -17,16 +17,20 @@ export const ContactsPage = ({contacts, addContact}) => {
       setName("");
       setPhone("");
       setEmail("");
+    } else {
+      alert("The contact already exists.");
     }    
   };
 
-  // useEffect(() => {
-  //   for (const contact of contacts) {
-  //     if (contact.contactName === name) {
-  //       setDuplicate(true);
-  //     }
-  //   }
-  // }, [name, contacts, duplicate]);
+  useEffect(() => {
+    for (const contact of contacts) {
+      if (contact.name === name) {
+        setDuplicate(true);
+      } else {
+        setDuplicate(false);
+      }
+    }
+  }, [name]);
 
   return (
     <div>
