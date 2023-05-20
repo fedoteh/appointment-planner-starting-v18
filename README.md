@@ -11,4 +11,6 @@ See the diagram below:
 
 ![Diagram](diagram.webp)
 
-As a beginner, the hardest part was re-using components for different presentational components.
+As a beginner, the hardest part was re-using components (TileList.js and Tiles.js) for different presentational components.
+
+Deployed using surge for a live demo/production build at https://thoughtless-week.surge.sh/
