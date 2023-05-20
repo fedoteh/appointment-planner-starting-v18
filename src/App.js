@@ -9,14 +9,14 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   function addContact(name, phone, email) {
-    const newContact = { name, phone, email }
+    const newContact = { name, phone, email } // using shorthand syntax instead of name: name, phone: phone, etc...
     setContacts(prevContacts => [...prevContacts, newContact]);
   };
 
   const [appointments, setAppointments] = useState([]);
 
-  const addAppointment = (appointmentName, contact, date, time) => {
-    const newAppointment = { appointmentName, contact, date, time };
+  const addAppointment = (name, contact, date, time) => {
+    const newAppointment = { name, contact, date, time };
     setAppointments(prevAppointments => [...prevAppointments, newAppointment]);
   };
 
@@ -24,7 +24,7 @@ function App() {
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} addContact={addContact} /> }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage appointments={appointments} addAppointment={addAppointment} contacts={contacts} /> }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> }/>
     </Route>
   ));
   
