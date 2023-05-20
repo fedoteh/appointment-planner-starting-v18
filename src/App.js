@@ -8,8 +8,8 @@ function App() {
 
   const [contacts, setContacts] = useState([]);
 
-  const addContact = (contactName, contactNumber, contactEmail) => {
-    const newContact = { contactName, contactNumber, contactEmail };
+  const addContact = (name, contactNumber, contactEmail) => {
+    const newContact = { name, contactNumber, contactEmail };
     setContacts(prevContacts => [...prevContacts, newContact]);
   };
 
